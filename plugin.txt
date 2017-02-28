@@ -1,0 +1,2 @@
+k10r Deployment-Helper (will be installed and activated by deployment-process).
+Try to deactivate it... you will be surprised after next deployment :P

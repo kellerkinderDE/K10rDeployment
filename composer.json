@@ -1,0 +1,15 @@
+{
+  "name": "k10r/deployment",
+  "type": "shopware-core-plugin",
+  "description": "Adds some helpers for shopware-deployment",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kellerkinder / k10r GmbH",
+      "email": "anfragen@kellerkinder.de"
+    }
+  ],
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}
