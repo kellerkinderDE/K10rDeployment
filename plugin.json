@@ -8,15 +8,17 @@
   "link": "http://www.kellerkinder.de",
   "author": "Kellerkinder / k10r GmbH",
   "support": "anfragen@kellerkinder.de",
-  "currentVersion": "0.0.4",
+  "currentVersion": "1.0.0",
   "changelog": {
     "de": {
+      "1.0.0": "Veröffentlichung auf GitHub",
       "0.0.4": "Befehl für Theme-Konfiguration ergänzt",
       "0.0.3": "Möglichkeit hinzugefügt ein Plugin zu deaktivieren.",
       "0.0.2": "Theme-Option für Update ergänzt",
       "0.0.1": "Erstveröffentlichung"
     },
     "en": {
+      "1.0.0": "Release on GitHub",
       "0.0.4": "Added command for theme configuration",
       "0.0.3": "Added command to deactivate plugins",
       "0.0.2": "Added theme option for update",

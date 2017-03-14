@@ -3,6 +3,13 @@
 K10rDeployment adds some helpful console commands for automatic deployments to Shopware 5.
 
 ## Usage
+### Install with composer
+* Change to your root Installation of shopware
+* Run command `composer require k10r/deployment`
+* Make sure composer dependencies are installed during your deployment
+* Activate the plugin during your deployment using the Shopware command line interface (`php bin/console sw:plugin:reinstall K10rDeployment`)
+
+### Zip/Git installation
 * Download the ZIP or clone this repository into your `engine/Shopware/Plugins/Local/Core/` folder.
 * Activate the plugin during your deployment using the Shopware command line interface (`php bin/console sw:plugin:reinstall K10rDeployment`)
 * You can now use any of the commands listed below
