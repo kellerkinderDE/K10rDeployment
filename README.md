@@ -59,5 +59,15 @@ Verifies if an update is needed for the application to be on a requested version
 
 * Usage: `php bin/console k10r:update:needed <targetVersion>`
 
+### Update Configuration
+* Usage/Example: `php bin/console k10r:config:set [--shop 1] "noaccountdisable" "true"`
+
+#### Parameters
+* `shop`   : Store ID of settings to be set, if not set, default-store will be used
+
+#### Arguments
+* `key`: Name of the configuration element to be set
+* `value`  : Value to be set
+
 ## License
 MIT licensed, see `LICENSE.md`
