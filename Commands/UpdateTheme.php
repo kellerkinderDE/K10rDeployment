@@ -44,7 +44,7 @@ class K10rUpdateThemeCommand extends ShopwareCommand
             ->addOption(
                 'value',
                 null,
-                InputOption::VALUE_REQUIRED,
+                InputOption::VALUE_OPTIONAL,
                 'Value to be set.'
             );
     }
@@ -109,6 +109,7 @@ class K10rUpdateThemeCommand extends ShopwareCommand
         if ($value === "0" || $value === "1") {
             $value = (bool)$value;
         }
+
 
         return $value;
     }
