@@ -8,9 +8,10 @@
   "link": "http://www.kellerkinder.de",
   "author": "Kellerkinder / k10r GmbH",
   "support": "anfragen@kellerkinder.de",
-  "currentVersion": "1.0.2",
+  "currentVersion": "1.0.3",
   "changelog": {
     "de": {
+      "1.0.3": "Fix für Theme-Kompilierung.",
       "1.0.2": "Parameter 'value' von k10r:theme:update auf optional geändert.",
       "1.0.1": "Command ergänzt um Konfigurationen zu setzen die nicht zu einem Plugin gehören.",
       "1.0.0": "Veröffentlichung auf GitHub",
@@ -20,6 +21,7 @@
       "0.0.1": "Erstveröffentlichung"
     },
     "en": {
+      "1.0.3": "Fix for theme compilation.",
       "1.0.2": "Change the param 'value' of k10r:theme:update to be optional.",
       "1.0.1": "Add command to set non-plugin-specific configuration values.",
       "1.0.0": "Release on GitHub",
