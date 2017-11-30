@@ -158,6 +158,7 @@ class Shopware_Plugins_Core_K10rDeployment_Bootstrap extends Shopware_Components
         require_once __DIR__ . '/Commands/PluginDeactivateCommand.php';
         require_once __DIR__ . '/Commands/UpdateTheme.php';
         require_once __DIR__ . '/Commands/ConfigSetCommand.php';
+        require_once __DIR__ . '/Commands/ClearCacheCommand.php';
 
         return new Doctrine\Common\Collections\ArrayCollection([
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rPluginInstallCommand(),
@@ -167,6 +168,7 @@ class Shopware_Plugins_Core_K10rDeployment_Bootstrap extends Shopware_Components
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rPluginDeactivateCommand(),
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rUpdateThemeCommand(),
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rConfigSetCommand(),
+                                                                   new \Shopware\Plugin\K10rDeployment\Command\K10rClearCacheCommand()
                                                                ]);
     }
 }
