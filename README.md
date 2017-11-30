@@ -72,9 +72,9 @@ Verifies if an update is needed for the application to be on a requested version
 ### Clear Cache
 Clear specific caches like in backend performance modul
 * Usage/Examples: 
-    `php bin/console k10r:clear:cache --all`
-    `php bin/console k10r:clear:cache --frontend`
-    `php bin/console k10r:clear:cache --config --template`
+    * `php bin/console k10r:clear:cache --all`
+    * `php bin/console k10r:clear:cache --frontend`
+    * `php bin/console k10r:clear:cache --config --template`
 
 #### Options
 * `all`: All caches
