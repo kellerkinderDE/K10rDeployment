@@ -69,5 +69,24 @@ Verifies if an update is needed for the application to be on a requested version
 * `key`: Name of the configuration element to be set
 * `value`  : Value to be set
 
+### Clear Cache
+Clear specific caches like in backend performance modul
+* Usage/Examples: 
+    * `php bin/console k10r:clear:cache --all`
+    * `php bin/console k10r:clear:cache --frontend`
+    * `php bin/console k10r:clear:cache --config --template`
+
+#### Options
+* `all`: All caches
+* `frontend` : All frontend related caches
+* `backend` : All backend related caches
+* `config` : Shopware configuration cache
+* `template` : Template cache
+* `theme` : Theme cache
+* `http` : Http-Proxy-Cache
+* `proxy` : Doctrine Annotations and Proxies
+* `search` : Cache search function
+* `router` :Index SEO-URLs
+
 ## License
 MIT licensed, see `LICENSE.md`
