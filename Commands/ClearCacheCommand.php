@@ -21,7 +21,7 @@ class K10rClearCacheCommand extends ShopwareCommand
      */
     protected function configure()
     {
-        $snippet = Shopware()->Snippets();
+        $snippet   = Shopware()->Snippets();
         $namespace = $snippet->getNamespace('backend/performance/main');
         $this
             ->setName('k10r:clear:cache')
@@ -54,7 +54,7 @@ class K10rClearCacheCommand extends ShopwareCommand
                 'http',
                 null,
                 InputArgument::REQUIRED,
-                $namespace->get('form/items/backend', 'Http-Proxy-Cache')
+                $namespace->get('form/items/backend', 'HTTP cache')
             )
             ->addOption(
                 'proxy',
@@ -72,7 +72,7 @@ class K10rClearCacheCommand extends ShopwareCommand
                 'router',
                 null,
                 InputArgument::REQUIRED,
-                $namespace->get('form/items/router', 'Index SEO-URLs')
+                $namespace->get('form/items/router', 'SEO URL index')
             )
             ->addOption(
                 'frontend',
@@ -86,7 +86,9 @@ class K10rClearCacheCommand extends ShopwareCommand
                 InputArgument::REQUIRED,
                 'Placeholder for all backend related caches'
             )
-            ->setHelp('This command flushes specific shopware caches like calling Shopware_Controllers_Backend_Cache::clearCacheAction from backend.');
+            ->setHelp(
+                'This command flushes specific shopware caches like calling Shopware_Controllers_Backend_Cache::clearCacheAction from backend.'
+            );
     }
 
     /**
@@ -95,24 +97,23 @@ class K10rClearCacheCommand extends ShopwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
 
-        $outputIsVerbose = $output->isVerbose();
         $io = new SymfonyStyle($input, $output);
 
         /** @var CacheManager $cacheManager */
-        $cacheManager = Shopware()->Container()->get('shopware.cache_manager');
+        $cacheManager  = Shopware()->Container()->get('shopware.cache_manager');
         $cacheInstance = $cacheManager->getCoreCache();
-        $capabilities = $cacheInstance->getBackend()->getCapabilities();
+        $capabilities  = $cacheInstance->getBackend()->getCapabilities();
 
-        $all = $input->getOption('all');
-        $config = $input->getOption('config');
+        $all      = $input->getOption('all');
+        $config   = $input->getOption('config');
         $template = $input->getOption('template');
-        $theme = $input->getOption('theme');
-        $http = $input->getOption('http');
-        $proxy = $input->getOption('proxy');
-        $search = $input->getOption('search');
-        $router = $input->getOption('router');
+        $theme    = $input->getOption('theme');
+        $http     = $input->getOption('http');
+        $proxy    = $input->getOption('proxy');
+        $search   = $input->getOption('search');
+        $router   = $input->getOption('router');
         $frontend = $input->getOption('frontend');
-        $backend = $input->getOption('backend');
+        $backend  = $input->getOption('backend');
 
 
         if (empty($capabilities['tags'])) {
@@ -151,7 +152,7 @@ class K10rClearCacheCommand extends ShopwareCommand
         }
         if ($all || $router) {
             $cacheManager->clearRewriteCache();
-            $io->comment('Clearing index SEO-URLs cache.');
+            $io->comment('Clearing SEO URL index.');
         }
         if ($all || $template || $backend || $frontend) {
             $cacheManager->clearTemplateCache();
@@ -163,7 +164,7 @@ class K10rClearCacheCommand extends ShopwareCommand
         }
         if ($all || $http || $frontend) {
             $cacheManager->clearHttpCache();
-            $io->comment('Clearing HTTP-Cache.');
+            $io->comment('Clearing HTTP cache.');
         }
         if ($all || $proxy) {
             $cacheManager->clearProxyCache();
@@ -175,6 +176,6 @@ class K10rClearCacheCommand extends ShopwareCommand
         /** @var Kernel $kernel */
         $kernel = $this->getContainer()->get('kernel');
 
-        $io->success(sprintf('Selected caches for the "%s" environment was successfully cleared.', $kernel->getEnvironment()));
+        $io->success(sprintf('Selected caches for the "%s" environment have been cleared.', $kernel->getEnvironment()));
     }
 }

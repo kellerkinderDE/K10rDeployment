@@ -78,15 +78,15 @@ Clear specific caches like in backend performance modul
 
 #### Options
 * `all`: All caches
-* `frontend` : All frontend related caches
-* `backend` : All backend related caches
-* `config` : Shopware configuration cache
-* `template` : Template cache
-* `theme` : Theme cache
-* `http` : Http-Proxy-Cache
-* `proxy` : Doctrine Annotations and Proxies
-* `search` : Cache search function
-* `router` :Index SEO-URLs
+* `frontend`: All frontend related caches
+* `backend`: All backend related caches
+* `config`: Shopware configuration cache
+* `template`: Template cache
+* `theme`: Theme cache
+* `http`: HTTP cache
+* `proxy`: Doctrine Annotations and Proxies
+* `search`: Search cache
+* `router`: SEO URL index
 
 ## License
 MIT licensed, see `LICENSE.md`
