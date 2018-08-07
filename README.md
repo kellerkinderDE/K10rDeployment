@@ -38,12 +38,13 @@ Updates the settings of a subshop
 * Usage/Example: `php bin/console k10r:store:update [--store 1] [--name <NewStoreName] [--host new.example.com] [--path /staging] [--title "DEV! Shop"] [--theme MyAwesomeTheme] `
 
 #### Parameters
-* `store`: Store ID of settings to be set, if not set, default-store will be used
-* `name` : Sets the name of a store
-* `host` : Sets the hostname of a store
-* `path` : Sets the path of the store relativ to the hostname (e.g. new.example.com/__staging__)
-* `title`: Sets the title of the store
-* `theme`: Sets the theme of the store, based on the given template name
+* `store` : Store ID of settings to be set, if not set, default-store will be used
+* `name`  : Sets the name of a store
+* `host`  : Sets the hostname of a store
+* `path`  : Sets the path of the store relativ to the hostname (e.g. new.example.com/__staging__)
+* `title` : Sets the title of the store
+* `theme` : Sets the theme of the store, based on the given template name
+* `secure`: Activate SSL of the store
 
 ### Update Theme Options
 * Usage/Example: `php bin/console k10r:theme:update --theme MyAweSomeTheme [--shop 1] --setting "text-color" --value "#FF0000"`
