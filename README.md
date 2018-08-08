@@ -44,7 +44,7 @@ Updates the settings of a subshop
 * `path`  : Sets the path of the store relativ to the hostname (e.g. new.example.com/__staging__)
 * `title` : Sets the title of the store
 * `theme` : Sets the theme of the store, based on the given template name
-* `secure`: Activate SSL of the store
+* `secure`: Activate SSL on the store
 
 ### Update Theme Options
 * Usage/Example: `php bin/console k10r:theme:update --theme MyAweSomeTheme [--shop 1] --setting "text-color" --value "#FF0000"`

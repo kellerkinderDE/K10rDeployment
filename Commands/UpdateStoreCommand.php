@@ -124,6 +124,11 @@ class K10rUpdateStoreCommand extends ShopwareCommand
 
         if ($input->getOption('secure')) {
             $shop->setSecure(true);
+
+            if (method_exists($shop, 'setAlwaysSecure')) {
+                $shop->setAlwaysSecure(true);
+            }
+
             $output->writeln('Shop "%s (#%d) has been set to secure.', $shop->getName(), $shop->getId());
         }
 
