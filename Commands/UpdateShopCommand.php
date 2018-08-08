@@ -11,7 +11,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class K10rUpdateStoreCommand extends ShopwareCommand
+class K10rUpdateShopCommand extends ShopwareCommand
 {
     /**
      * {@inheritdoc}
@@ -19,13 +19,13 @@ class K10rUpdateStoreCommand extends ShopwareCommand
     protected function configure()
     {
         $this
-            ->setName('k10r:store:update')
+            ->setName('k10r:shop:update')
             ->setDescription('Updates settings for shop.')
             ->addOption(
-                'store',
+                'shop',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Store ID of settings to be set, if not set, default-store will be used.'
+                'Shop ID of settings to be set, if not set, default-shop will be used.'
             )
             ->addOption(
                 'name',
@@ -77,10 +77,10 @@ class K10rUpdateStoreCommand extends ShopwareCommand
         $templateRepository = $this->container->get('models')->getRepository('Shopware\Models\Shop\Template');
 
 
-        if (!$input->getOption('store')) {
+        if (!$input->getOption('shop')) {
             $shop = $shopRepository->findOneBy(['default' => true]);
         } else {
-            $shop = $shopRepository->find((int)$input->getOption('store'));
+            $shop = $shopRepository->find((int)$input->getOption('shop'));
         }
 
         /** @var Shop $shop */

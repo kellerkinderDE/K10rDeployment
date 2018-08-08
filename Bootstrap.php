@@ -153,7 +153,7 @@ class Shopware_Plugins_Core_K10rDeployment_Bootstrap extends Shopware_Components
     {
         require_once __DIR__ . '/Commands/PluginInstallCommand.php';
         require_once __DIR__ . '/Commands/CompileThemeCommand.php';
-        require_once __DIR__ . '/Commands/UpdateStoreCommand.php';
+        require_once __DIR__ . '/Commands/UpdateShopCommand.php';
         require_once __DIR__ . '/Commands/UpdateNeededCommand.php';
         require_once __DIR__ . '/Commands/PluginDeactivateCommand.php';
         require_once __DIR__ . '/Commands/UpdateTheme.php';
@@ -163,7 +163,7 @@ class Shopware_Plugins_Core_K10rDeployment_Bootstrap extends Shopware_Components
         return new Doctrine\Common\Collections\ArrayCollection([
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rPluginInstallCommand(),
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rCompileThemeCommand(),
-                                                                   new \Shopware\Plugin\K10rDeployment\Command\K10rUpdateStoreCommand(),
+                                                                   new \Shopware\Plugin\K10rDeployment\Command\K10rUpdateShopCommand(),
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rUpdateNeededCommand(),
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rPluginDeactivateCommand(),
                                                                    new \Shopware\Plugin\K10rDeployment\Command\K10rUpdateThemeCommand(),

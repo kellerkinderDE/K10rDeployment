@@ -32,26 +32,26 @@ Installs a plugin and updates it, if necessary. This command does not fail, if t
 
 Use the optional `--activate` option to activate the plugin after the installation.
 
-### Update Store Settings
+### Update Shop Settings
 Updates the settings of a subshop
 
-* Usage/Example: `php bin/console k10r:store:update [--store 1] [--name <NewStoreName] [--host new.example.com] [--path /staging] [--title "DEV! Shop"] [--theme MyAwesomeTheme] `
+* Usage/Example: `php bin/console k10r:shop:update [--shop 1] [--name <NewShopName] [--host new.example.com] [--path /staging] [--title "DEV! Shop"] [--theme MyAwesomeTheme] `
 
 #### Parameters
-* `store` : Store ID of settings to be set, if not set, default-store will be used
-* `name`  : Sets the name of a store
-* `host`  : Sets the hostname of a store
-* `path`  : Sets the path of the store relativ to the hostname (e.g. new.example.com/__staging__)
-* `title` : Sets the title of the store
-* `theme` : Sets the theme of the store, based on the given template name
-* `secure`: Activate SSL on the store
+* `shop`  : Shop ID of settings to be set, if not set, default-shop will be used
+* `name`  : Sets the name of a shop
+* `host`  : Sets the hostname of a shop
+* `path`  : Sets the path of the shop relativ to the hostname (e.g. new.example.com/__staging__)
+* `title` : Sets the title of the shop
+* `theme` : Sets the theme of the shop, based on the given template name
+* `secure`: Activate SSL on the shop
 
 ### Update Theme Options
 * Usage/Example: `php bin/console k10r:theme:update --theme MyAweSomeTheme [--shop 1] --setting "text-color" --value "#FF0000"`
 
 #### Parameters
 * `theme`  : Name of the theme for settings to be set
-* `shop`   : Store ID of settings to be set, if not set, default-store will be used
+* `shop`   : Shop ID of settings to be set, if not set, default-shop will be used
 * `setting`: Name of the setting to be set
 * `value`  : Value to be set
 
@@ -64,7 +64,7 @@ Verifies if an update is needed for the application to be on a requested version
 * Usage/Example: `php bin/console k10r:config:set [--shop 1] "noaccountdisable" "true"`
 
 #### Parameters
-* `shop`   : Store ID of settings to be set, if not set, default-store will be used
+* `shop`   : Shop ID of settings to be set, if not set, default-shop will be used
 
 #### Arguments
 * `key`: Name of the configuration element to be set
