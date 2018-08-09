@@ -35,10 +35,10 @@ Use the optional `--activate` option to activate the plugin after the installati
 ### Update Shop Settings
 Updates the settings of a subshop
 
-* Usage/Example: `php bin/console k10r:shop:update [--shop 1] [--name <NewShopName] [--host new.example.com] [--path /staging] [--title "DEV! Shop"] [--theme MyAwesomeTheme] `
+* Usage/Example: `php bin/console k10r:store:update [--store 1] [--name <NewShopName] [--host new.example.com] [--path /staging] [--title "DEV! Shop"] [--theme MyAwesomeTheme] `
 
 #### Parameters
-* `shop`  : Shop ID of settings to be set, if not set, default-shop will be used
+* `store` : Shop ID of settings to be set, if not set, default-shop will be used
 * `name`  : Sets the name of a shop
 * `host`  : Sets the hostname of a shop
 * `path`  : Sets the path of the shop relativ to the hostname (e.g. new.example.com/__staging__)
