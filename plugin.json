@@ -8,9 +8,10 @@
   "link": "http://www.kellerkinder.de",
   "author": "Kellerkinder / k10r GmbH",
   "support": "anfragen@kellerkinder.de",
-  "currentVersion": "1.1.0",
+  "currentVersion": "1.2.0",
   "changelog": {
     "de": {
+      "1.2.0": "'secure' Parameter für k10r:store:update hinzugefügt",
       "1.1.0": "Möglichkeit bestimmte Caches wie im Performance-Modul im Backend via Command zu leeren.",
       "1.0.3": "Fix für Theme-Kompilierung.",
       "1.0.2": "Parameter 'value' von k10r:theme:update auf optional geändert.",
@@ -22,6 +23,7 @@
       "0.0.1": "Erstveröffentlichung"
     },
     "en": {
+      "1.2.0": "Added 'secure' param for k10r:store:update",
       "1.1.0": "Added command to clear specific caches like in backend performance modul.",
       "1.0.3": "Fix for theme compilation.",
       "1.0.2": "Change the param 'value' of k10r:theme:update to be optional.",
