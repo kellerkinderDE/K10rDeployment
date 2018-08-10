@@ -27,7 +27,7 @@ class K10rUpdateThemeCommand extends ShopwareCommand
                 'shop',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Store ID of settings to be set, if not set, default-store will be used.'
+                'Shop ID of settings to be set, if not set, default-shop will be used.'
             )
             ->addOption(
                 'theme',

@@ -153,7 +153,7 @@ class Shopware_Plugins_Core_K10rDeployment_Bootstrap extends Shopware_Components
     {
         require_once __DIR__ . '/Commands/PluginInstallCommand.php';
         require_once __DIR__ . '/Commands/CompileThemeCommand.php';
-        require_once __DIR__ . '/Commands/UpdateStore.php';
+        require_once __DIR__ . '/Commands/UpdateStoreCommand.php';
         require_once __DIR__ . '/Commands/UpdateNeededCommand.php';
         require_once __DIR__ . '/Commands/PluginDeactivateCommand.php';
         require_once __DIR__ . '/Commands/UpdateTheme.php';

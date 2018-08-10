@@ -25,7 +25,7 @@ class K10rUpdateStoreCommand extends ShopwareCommand
                 'store',
                 null,
                 InputOption::VALUE_OPTIONAL,
-                'Store ID of settings to be set, if not set, default-store will be used.'
+                'Shop ID of settings to be set, if not set, default-shop will be used.'
             )
             ->addOption(
                 'name',
@@ -56,6 +56,12 @@ class K10rUpdateStoreCommand extends ShopwareCommand
                 null,
                 InputOption::VALUE_OPTIONAL,
                 'Theme to be set.'
+            )
+            ->addOption(
+                'secure',
+                null,
+                InputOption::VALUE_OPTIONAL,
+                'Activate SSL'
             )
         ;
     }
@@ -114,6 +120,16 @@ class K10rUpdateStoreCommand extends ShopwareCommand
             }
             $shop->setTemplate($theme);
             $output->writeln(sprintf('Theme for shop "%s (#%d)" has been set to "%s".', $shop->getName(), $shop->getId(), $shop->getTemplate()->getTemplate()));
+        }
+
+        if ($input->getOption('secure')) {
+            $shop->setSecure(true);
+
+            if (method_exists($shop, 'setAlwaysSecure')) {
+                $shop->setAlwaysSecure(true);
+            }
+
+            $output->writeln('Shop "%s (#%d) has been set to secure.', $shop->getName(), $shop->getId());
         }
 
         $this->container->get('models')->persist($shop);
