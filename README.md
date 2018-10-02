@@ -70,6 +70,25 @@ Verifies if an update is needed for the application to be on a requested version
 * `key`: Name of the configuration element to be set
 * `value`  : Value to be set
 
+### Fetch Configuration
+Retrieves the plugin configuration and display it inside the console.
+
+* Usage/Example: `php bin/console k10r:config:get pluginName`
+
+#### Arguments
+* `pluginName`: Name of the plugin
+
+#### Example Response:
+```console
+$ ./bin/console k10r:config:get PluginName
++---------------------+-----------------+------------+---------------+
+| Config Eement       | Shop ID: 1      | Shop ID: 2 | Default Value |
++---------------------+-----------------+------------+---------------+
+| Element Name        | Value           |            |               |
+| Other Element       | Other Value     |            |               |
++---------------------+-----------------+------------+---------------+
+```
+
 ### Clear Cache
 Clear specific caches like in backend performance modul
 * Usage/Examples: 

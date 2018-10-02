@@ -1,14 +1,11 @@
 <?php
+
 namespace Shopware\Plugin\K10rDeployment\Command;
 
-use Shopware\Bundle\PluginInstallerBundle\Service\InstallerService;
 use Shopware\Commands\ShopwareCommand;
 use Shopware\Components\Model\ModelManager;
-use Shopware\Components\Theme\Compiler;
 use Shopware\Models\Config\Value;
-use Shopware\Models\Shop\Repository;
 use Shopware\Models\Shop\Shop;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -47,7 +44,7 @@ class K10rConfigSetCommand extends ShopwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        /**@var ModelManager $em */
+        /** @var ModelManager $em */
         $em = $this->container->get('models');
 
         if ($input->getOption('shop')) {
@@ -76,8 +73,7 @@ class K10rConfigSetCommand extends ShopwareCommand
 
         $this->saveElement($input->getArgument('key'), $value, $shop);
 
-        $output->writeln(sprintf("Configuration for key %s saved.", $input->getArgument('key')));
-
+        $output->writeln(sprintf('Configuration for key %s saved.', $input->getArgument('key')));
     }
 
     /**
@@ -86,17 +82,17 @@ class K10rConfigSetCommand extends ShopwareCommand
      *
      * @param $value
      *
-     * @return bool|int|null|string
+     * @return null|bool|int|string
      */
     private function castValue($value)
     {
-        if ($value === "null") {
+        if ($value === 'null') {
             return null;
         }
-        if ($value === "false") {
+        if ($value === 'false') {
             return false;
         }
-        if ($value === "true") {
+        if ($value === 'true') {
             return true;
         }
         if (preg_match('/^\d+$/', $value)) {
@@ -108,8 +104,8 @@ class K10rConfigSetCommand extends ShopwareCommand
 
     /**
      * @param string $key
-     * @param mixed $value
-     * @param Shop $shop
+     * @param mixed  $value
+     * @param Shop   $shop
      */
     private function saveElement($key, $value, $shop)
     {

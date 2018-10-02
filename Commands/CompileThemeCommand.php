@@ -1,4 +1,5 @@
 <?php
+
 namespace Shopware\Plugin\K10rDeployment\Command;
 
 use Shopware\Commands\ShopwareCommand;
@@ -17,8 +18,7 @@ class K10rCompileThemeCommand extends ShopwareCommand
     {
         $this
             ->setName('k10r:theme:compile')
-            ->setDescription('Compiles the theme for shop.')
-        ;
+            ->setDescription('Compiles the theme for shop.');
     }
 
     /**

@@ -1,9 +1,9 @@
 <?php
+
 namespace Shopware\Plugin\K10rDeployment\Command;
 
 use Shopware\Bundle\PluginInstallerBundle\Service\InstallerService;
 use Shopware\Commands\ShopwareCommand;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -62,16 +62,15 @@ class K10rPluginInstallCommand extends ShopwareCommand
             return 1;
         }
 
-
         if ($plugin->getInstalled()) {
-            if($plugin->hasCapabilityUpdate()) {
+            if ($plugin->hasCapabilityUpdate()) {
                 $pluginManager->updatePlugin($plugin);
                 $output->writeln(sprintf('Plugin by name "%s" has been updated.', $pluginName));
             } else {
                 $output->writeln(sprintf('Plugin by name "%s" can not be updated.', $pluginName));
             }
         } else {
-            if($plugin->hasCapabilityInstall()) {
+            if ($plugin->hasCapabilityInstall()) {
                 $pluginManager->installPlugin($plugin);
                 $output->writeln(sprintf('Plugin by name "%s" has been installed.', $pluginName));
             } else {
@@ -80,7 +79,7 @@ class K10rPluginInstallCommand extends ShopwareCommand
         }
 
         if ($input->getOption('activate')) {
-            if($plugin->getInstalled() && $plugin->hasCapabilityEnable()) {
+            if ($plugin->getInstalled() && $plugin->hasCapabilityEnable()) {
                 $pluginManager->activatePlugin($plugin);
                 $output->writeln(sprintf('Plugin by name "%s" has been activated.', $pluginName));
             } else {
