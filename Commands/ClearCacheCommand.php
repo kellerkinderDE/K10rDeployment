@@ -12,7 +12,6 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
  * Class K10rClearCacheCommand
- * @package Shopware\Plugin\K10rDeployment\Command
  */
 class K10rClearCacheCommand extends ShopwareCommand
 {
@@ -96,7 +95,6 @@ class K10rClearCacheCommand extends ShopwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-
         $io = new SymfonyStyle($input, $output);
 
         /** @var CacheManager $cacheManager */
@@ -114,7 +112,6 @@ class K10rClearCacheCommand extends ShopwareCommand
         $router   = $input->getOption('router');
         $frontend = $input->getOption('frontend');
         $backend  = $input->getOption('backend');
-
 
         if (empty($capabilities['tags'])) {
             if ($config || $template) {

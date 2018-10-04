@@ -1,12 +1,11 @@
 <?php
+
 namespace Shopware\Plugin\K10rDeployment\Command;
 
 use Shopware\Bundle\PluginInstallerBundle\Service\InstallerService;
 use Shopware\Commands\ShopwareCommand;
-use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class K10rPluginDeactivateCommand extends ShopwareCommand
@@ -55,7 +54,6 @@ class K10rPluginDeactivateCommand extends ShopwareCommand
 
             return 1;
         }
-
 
         if ($plugin->getInstalled() && $plugin->getActive()) {
             $pluginManager->deactivatePlugin($plugin);

@@ -1,14 +1,11 @@
 <?php
+
 namespace Shopware\Plugin\K10rDeployment\Command;
 
 use Shopware\Commands\ShopwareCommand;
-use Shopware\Models\Shop\Repository;
-use Shopware\Models\Shop\Shop;
 use Shopware\Models\Shop\Template;
 use Shopware\Models\Shop\TemplateConfig\Element;
 use Shopware\Models\Shop\TemplateConfig\Value;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -57,10 +54,10 @@ class K10rUpdateThemeCommand extends ShopwareCommand
         $shopRepository     = $this->container->get('models')->getRepository('Shopware\Models\Shop\Shop');
         $templateRepository = $this->container->get('models')->getRepository('Shopware\Models\Shop\Template');
 
-        if ( ! $input->getOption('shop')) {
+        if (!$input->getOption('shop')) {
             $shop = $shopRepository->findOneBy(['default' => true]);
         } else {
-            $shop = $shopRepository->find((int)$input->getOption('shop'));
+            $shop = $shopRepository->find((int) $input->getOption('shop'));
         }
 
         $this->container->get('theme_installer')->synchronize();
@@ -86,9 +83,9 @@ class K10rUpdateThemeCommand extends ShopwareCommand
             /** @var Value $value */
             return $value->getShop() && $value->getShop()->getId() == $shop->getId();
         });
-        $value     = $values->first();
+        $value = $values->first();
 
-        if ( ! $value) {
+        if (!$value) {
             $value = new Value();
             $value->setElement($element);
             $value->setShop($shop);
@@ -106,10 +103,9 @@ class K10rUpdateThemeCommand extends ShopwareCommand
 
     protected function processValue($value)
     {
-        if ($value === "0" || $value === "1") {
-            $value = (bool)$value;
+        if ($value === '0' || $value === '1') {
+            $value = (bool) $value;
         }
-
 
         return $value;
     }

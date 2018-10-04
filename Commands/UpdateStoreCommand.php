@@ -1,12 +1,11 @@
 <?php
+
 namespace Shopware\Plugin\K10rDeployment\Command;
 
 use Shopware\Commands\ShopwareCommand;
 use Shopware\Models\Shop\Repository;
 use Shopware\Models\Shop\Shop;
 use Shopware\Models\Shop\Template;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -62,8 +61,7 @@ class K10rUpdateStoreCommand extends ShopwareCommand
                 null,
                 InputOption::VALUE_OPTIONAL,
                 'Activate SSL'
-            )
-        ;
+            );
     }
 
     /**
@@ -76,15 +74,13 @@ class K10rUpdateStoreCommand extends ShopwareCommand
         /** @var Repository $templateRepository */
         $templateRepository = $this->container->get('models')->getRepository('Shopware\Models\Shop\Template');
 
-
         if (!$input->getOption('store')) {
             $shop = $shopRepository->findOneBy(['default' => true]);
         } else {
-            $shop = $shopRepository->find((int)$input->getOption('store'));
+            $shop = $shopRepository->find((int) $input->getOption('store'));
         }
 
         /** @var Shop $shop */
-
         if ($input->getOption('title')) {
             $shop->setTitle($input->getOption('title'));
             $output->writeln(sprintf('Title for shop "%s (#%d)" has been set to "%s".', $shop->getName(), $shop->getId(), $shop->getTitle()));

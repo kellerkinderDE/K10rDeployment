@@ -14,5 +14,8 @@
   },
   "extra": {
     "installer-name": "K10rDeployment"
+  },
+  "require-dev": {
+    "k10r/codestyle": "^1.0"
   }
 }
