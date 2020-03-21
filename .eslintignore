@@ -1,0 +1,6 @@
+node_modules/
+vendor/
+tests/
+src/Resources/app/storefront/dist/storefront/js/*
+src/Resources/public/administration/js/*
+coverage/
