@@ -28,6 +28,5 @@ class FinishFrwCommand extends Command
     {
         $this->firstRunWizardClient->finishFrw(false, Context::createDefaultContext());
     }
-
-
+    
 }

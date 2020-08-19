@@ -13,6 +13,22 @@
             <argument type="service" id="Shopware\Core\Framework\Store\Services\FirstRunWizardClient"/>
             <tag name="console.command"/>
         </service>
+        <service id="K10rDeployment\Command\UpdateThemeIdCommand">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <tag name="console.command"/>
+        </service>
+        <service id="K10rDeployment\Command\UpdateNeededCommand">
+            <argument>%kernel.shopware_version%</argument>
+            <tag name="console.command"/>
+        </service>
+        <service id="K10rDeployment\Command\ThemeChangeCommand">
+            <argument id="Shopware\Storefront\Theme\ThemeService" type="service"/>
+            <argument id="Shopware\Storefront\Theme\StorefrontPluginRegistry" type="service"/>
+            <argument id="sales_channel.repository" type="service"/>
+            <argument id="theme.repository" type="service"/>
+            <argument id="theme_sales_channel.repository" type="service"/>
+            <tag name="console.command"/>
+        </service>
 
     </services>
 </container>
