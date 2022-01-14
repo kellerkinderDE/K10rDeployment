@@ -29,7 +29,9 @@ class K10rUpdateNeededCommand extends ShopwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $currentVersion = \Shopware::VERSION;
+        $currentVersion = $this->container->hasParameter('shopware.release.version')
+            ? $this->container->getParameter('shopware.release.version')
+            : \Shopware::VERSION;
 
         return (int) (version_compare($currentVersion, $input->getArgument('version')) >= 0);
     }
