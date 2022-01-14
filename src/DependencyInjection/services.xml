@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <imports>
+        <import resource="translations.xml" />
+    </imports>
+
+    <services>
+
+        <service id="K10rDeployment\Command\FinishFrwCommand">
+            <argument type="service" id="Shopware\Core\Framework\Store\Services\FirstRunWizardClient"/>
+            <tag name="console.command"/>
+        </service>
+        <service id="K10rDeployment\Command\UpdateThemeIdCommand">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <tag name="console.command"/>
+        </service>
+        <service id="K10rDeployment\Command\UpdateNeededCommand">
+            <argument>%kernel.shopware_version%</argument>
+            <tag name="console.command"/>
+        </service>
+        <service id="K10rDeployment\Command\ThemeChangeCommand">
+            <argument id="Shopware\Storefront\Theme\ThemeService" type="service"/>
+            <argument id="Shopware\Storefront\Theme\StorefrontPluginRegistry" type="service"/>
+            <argument id="sales_channel.repository" type="service"/>
+            <argument id="theme.repository" type="service"/>
+            <argument id="theme_sales_channel.repository" type="service"/>
+            <tag name="console.command"/>
+        </service>
+
+    </services>
+</container>

@@ -1,3 +1,8 @@
 .idea
 .php_cs.cache
-vendor
+coverage/
+vendor/
+.phpunit.result.cache
+phpmd_result.xml
+src/Resources/public/static/
+src/Resources/public/administration/*.hot-update.js

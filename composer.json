@@ -1,21 +1,58 @@
 {
-  "name": "k10r/deployment",
-  "type": "shopware-core-plugin",
+  "name": "k10r/deployment-sw6",
   "description": "Adds some helpers for shopware-deployment",
-  "license": "MIT",
+  "version": "v1.0.0",
+  "type": "shopware-platform-plugin",
+  "license": "Commercial",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "authors": [
     {
-      "name": "Kellerkinder / k10r GmbH",
-      "email": "anfragen@kellerkinder.de"
+      "name": "Kellerkinder GmbH",
+      "email": "hallo@kellerkinder.de",
+      "homepage": "https://www.kellerkinder.de/",
+      "role": "Contributor"
     }
   ],
   "require": {
-    "composer/installers": "~1.0"
-  },
-  "extra": {
-    "installer-name": "K10rDeployment"
+    "php": "^7.2",
+    "shopware/core": "*",
+    "shopware/administration": "*",
+    "shopware/storefront": "*"
   },
   "require-dev": {
-    "k10r/codestyle": "^1.0"
+    "fzaninotto/faker": "1.8.0",
+    "k10r/codestyle": "^1.0",
+    "phpstan/phpstan": "^0.11",
+    "phpstan/phpstan-phpunit": "^0.11",
+    "phpunit/phpunit": "^8.1"
+  },
+  "extra": {
+    "shopware-plugin-class": "K10rDeployment\\K10rDeployment",
+    "copyright": "(c) Kellerkinder GmbH",
+    "label": {
+      "de-DE": "Deployment-Helper",
+      "en-GB": "Deployment-Helper"
+    },
+    "description": {
+      "de-DE": "Deployment-Helper",
+      "en-GB": "Deployment-Helper"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "K10rDeployment\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "K10rDeployment\\Test\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/php-cs-fixer fix"
   }
 }
