@@ -8,9 +8,10 @@
   "link": "http://www.kellerkinder.de",
   "author": "Kellerkinder GmbH",
   "support": "hallo@kellerkinder.de",
-  "currentVersion": "1.3.0",
+  "currentVersion": "1.3.1",
   "changelog": {
     "de": {
+      "1.3.1": "Reinstallation wieder ermöglicht",
       "1.3.0": "Kompatibilität zu Shopware 5.6 hergestellt",
       "1.2.0": "'secure' Parameter für k10r:store:update hinzugefügt",
       "1.1.0": "Möglichkeit bestimmte Caches wie im Performance-Modul im Backend via Command zu leeren.",
@@ -24,6 +25,7 @@
       "0.0.1": "Erstveröffentlichung"
     },
     "en": {
+      "1.3.1": "Allowed reinstall again",
       "1.3.0": "Added compatibility to Shopware 5.6",
       "1.2.0": "Added 'secure' param for k10r:store:update",
       "1.1.0": "Added command to clear specific caches like in backend performance modul.",
