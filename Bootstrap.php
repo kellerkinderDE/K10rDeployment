@@ -87,7 +87,7 @@ class Shopware_Plugins_Core_K10rDeployment_Bootstrap extends Shopware_Components
      */
     public function uninstall()
     {
-        return false;
+        throw new \Exception('Sorry, but you cannot uninstall this plugin.');
     }
 
     /**
@@ -95,7 +95,7 @@ class Shopware_Plugins_Core_K10rDeployment_Bootstrap extends Shopware_Components
      */
     public function secureUninstall()
     {
-        return false;
+        return true;
     }
 
     public function onAddConsoleCommands(Enlight_Event_EventArgs $args)
